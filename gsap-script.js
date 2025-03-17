@@ -68,3 +68,18 @@ gsap.registerPlugin(ScrollTrigger);
                 toggleActions: "play none none none"
             }
         });
+
+let lastScrollY = window.scrollY;
+        let navbar = document.getElementById("navbar");
+        let isHidden = false;
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > lastScrollY && !isHidden) {
+                gsap.to(navbar, { top: "-80px", duration: 0.5, ease: "power2.out" });
+                isHidden = true;
+            } else if (window.scrollY < lastScrollY && isHidden) {
+                gsap.to(navbar, { top: "10px", duration: 0.5, ease: "power2.out" });
+                isHidden = false;
+            }
+            lastScrollY = window.scrollY;
+        });
