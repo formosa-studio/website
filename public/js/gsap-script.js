@@ -1,20 +1,20 @@
 gsap.registerPlugin(ScrollTrigger);
 
-        let horizontalSection = document.querySelector(".horizontal-section");
+let horizontalSection = document.querySelector(".horizontal-section");
 
-        gsap.to(horizontalSection, {
-            x: () => -(horizontalSection.scrollWidth - window.innerWidth) + "px",
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".horizontal-wrapper",
-                start: "top top",
-                end: () => "+=" + (horizontalSection.scrollWidth - window.innerWidth),
-                pin: true,
-                scrub: 1,
-                anticipatePin: 1,
-                invalidateOnRefresh: true
-            }
-        });
+gsap.to(horizontalSection, {
+    x: () => -(horizontalSection.scrollWidth - window.innerWidth) + "px",
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".horizontal-wrapper",
+            start: "top top",
+            end: () => "+=" + (horizontalSection.scrollWidth - window.innerWidth),
+            pin: true,
+            scrub: 1,
+            anticipatePin: 1,
+            invalidateOnRefresh: true
+        }
+    });
 
         gsap.utils.toArray(".panel").forEach((panel, index) => {
             gsap.to(panel, {
@@ -68,3 +68,4 @@ gsap.registerPlugin(ScrollTrigger);
                 toggleActions: "play none none none"
             }
         });
+            
