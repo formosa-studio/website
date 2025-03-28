@@ -3,7 +3,7 @@ module.exports = async () => {
     const fs = require("fs");
     const path = require("path");
 
-    const token = process.env.TU_Token
+    const token = process.env.TU_TOKEN
     const url = `https://api.teamup.com/kscgrtk5zmwe8cndts/events`;
 
     try {
